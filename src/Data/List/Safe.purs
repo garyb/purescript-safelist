@@ -5,6 +5,7 @@ module Data.List.Safe
   , SafeList(..)
   , cons, (:)
   , nil
+  , head
   , toNEL
   , toList
   , toUnfoldable
@@ -39,6 +40,13 @@ infixr 6 cons as :
 
 nil ∷ ∀ a. SafeList Empty a
 nil = SafeNil refl
+
+-- | Get head of known-to-be-non-empty `SafeList`
+head :: forall a. SafeList NonEmpty a -> a
+head =
+  case _ of
+    SafeCons x _ _ → x
+    SafeNil _ → unsafeCrashWith "SafeNil in head"
 
 -- | Converts a known-to-be-non-empty `SafeList` into a `NonEmptyList`.
 toNEL ∷ ∀ a. SafeList NonEmpty a → NEL.NonEmptyList a
