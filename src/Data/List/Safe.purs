@@ -77,7 +77,7 @@ newtype Leibniz (a ∷ Emptiness) (b ∷ Emptiness) = Leibniz (forall f. f a -> 
 infix 4 type Leibniz as ~
 
 refl ∷ ∀ a. Leibniz a a
-refl = Leibniz id
+refl = Leibniz identity
 
 -- | A version of `SafeList` with the emptiness variable hidden.
 foreign import data SafeListX ∷ Type → Type

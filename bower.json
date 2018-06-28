@@ -15,7 +15,7 @@
     "package.json"
   ],
   "dependencies": {
-    "purescript-lists": "^4.9.0",
-    "purescript-unsafe-coerce": "^3.0.0"
+    "purescript-lists": "^5.0.0",
+    "purescript-unsafe-coerce": "^4.0.0"
   }
 }
