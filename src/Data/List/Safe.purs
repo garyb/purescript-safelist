@@ -1,5 +1,5 @@
 module Data.List.Safe
-  ( kind Emptiness
+  ( Emptiness
   , Empty
   , NonEmpty
   , SafeList(..)
@@ -24,7 +24,7 @@ import Data.Unfoldable (class Unfoldable)
 import Partial.Unsafe (unsafeCrashWith)
 import Unsafe.Coerce (unsafeCoerce)
 
-foreign import kind Emptiness
+foreign import data Emptiness ∷ Type
 foreign import data Empty ∷ Emptiness
 foreign import data NonEmpty ∷ Emptiness
 
